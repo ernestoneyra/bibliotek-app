@@ -3,6 +3,10 @@
     flex-wrap: wrap-reverse;
 
 } */
+.small {
+    
+    max-width: 500px;
+}
 
 .parent {
     display: flex;
@@ -13,7 +17,7 @@
   .child {
     /* percent per item in row. 
     33% = limit to 3 per row. */
-    flex: 1 0 20%; 
+    flex: 1 0 33%; 
     margin: 0 0 20px 0;
    height: 140px;
     
@@ -96,12 +100,18 @@ ul {
 
 
 }
+.right {
+    margin-right: 33%;
+}
 
 @media only screen and (max-width: 600px){
 	/*Big smartphones [426px -> 600px]*/
     .child {
         flex: 1 0 33%; 
         margin: 0 0 20px 0;
-       height: 140px;
+       height: 150px;
+    }
+    .right {
+        margin-right: 36%;
     }
 }

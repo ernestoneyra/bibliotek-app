@@ -18,7 +18,7 @@ const AllBooks = ({ books, audioBooks }) => {
         <div key={i} className="booksName child">
           <ul className="">
             <div className="">
-              <span>{`Titel: ${title}`}</span>
+              <span><strong>{` ${title}`}</strong></span>
               <br />
               <span>
                 {`Författare: ${author}`} <br />
@@ -51,7 +51,7 @@ const AllBooks = ({ books, audioBooks }) => {
         <div key={index} className="booksName  child">
           <ul>
             <div className="">
-              <span>{`Titel: ${title}`}</span> <br />
+              <span><strong>{`${title}`}</strong></span> <br />
               <span>{`Utgivningsår: ${releaseDate}`}</span> <br />
               <span>{`Längd: ${lengthHour}h ${lengthMin}min`}</span>
               <br />
@@ -82,12 +82,12 @@ const AllBooks = ({ books, audioBooks }) => {
 
   return (
     <>
-      <main className="">
+      <main className="small">
         
           {/* BOOKS */}
           <div>
             <button
-              className="btn primary-btn highlighted-btn"
+              className="btn primary-btn highlighted-btn right"
               onClick={onClickShowBooks}
             >
               {showBooks ? "Dölj böcker" : "Visa Böcker"}
@@ -107,7 +107,7 @@ const AllBooks = ({ books, audioBooks }) => {
           <div>
             
             <div className=" ">
-            {showAudioBooks && <div className="mapped parent">{mappedAudioBooks()}</div>}
+            {showAudioBooks && <div className="mapped  parent">{mappedAudioBooks()}</div>}
           </div>
         </div>
       </main>
