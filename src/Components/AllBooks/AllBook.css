@@ -1,0 +1,79 @@
+.audiobooks {
+    max-width: 80%;
+    flex-wrap: wrap-reverse;
+
+}
+
+ul {
+    padding: 0 0 0 9px;
+}
+
+.highlighted-btn2:hover {
+    /* margin: 0 0 0 28px; */
+
+
+    background-color: rgb(182, 0, 0);
+    color: white;
+}
+
+.btn2 {
+    border-radius: 50px;
+    padding: 10px 0;
+    width: 160px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+.btn2:active {
+    transform: translateY(2px);
+}
+
+.primary-btn2 {
+    color: var(--white);
+    border: 2px solid linen;
+    font-size: 16px;
+    background-color: orange;
+
+}
+
+
+.mapped {
+    margin-top: 10px;
+
+
+}
+
+.highlighted-btn:hover {
+    /* margin: 0 0 0 28px; */
+
+    background-color: rgba(39, 42, 250, 0.884);
+    color: white;
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 10px 0;
+    width: 160px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.primary-btn {
+    color: var(--white);
+    border: 2px solid linen;
+    font-size: 16px;
+
+    background-color: rgb(129, 208, 253);
+}
+
+.booksName {
+    margin-left: 0;
+
+
+}
