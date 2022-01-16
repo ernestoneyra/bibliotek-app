@@ -3,7 +3,7 @@ import "../../App.css";
 import "./AllBook.css";
 
 const AllBooks = ({ books, audioBooks }) => {
-  const [showBooks, setShowBooks] = useState(false);
+  const [showBooks, setShowBooks] = useState(true);
   const [showAudioBooks, setShowAudioBooks] = useState(false);
 
   /*  console.log("books", books);
@@ -15,22 +15,28 @@ const AllBooks = ({ books, audioBooks }) => {
       let genreB = genres.data;
       /*   console.log("genreB", genreB); */
       return (
-        <div key={i} className="booksName">
-          <ul>
-            {`Titel: ${title}`}
-            <br />
-            {`Författare: ${author}`} <br />
-            {`Sidor: ${pages}`} <br />
-            <span>
-              Genre: {""}
-              {genreB.map((genAB) => {
-                return <span>{` ${genAB.attributes.genre}`}</span>;
-              })}
+        <div key={i} className="booksName child">
+          <ul className="">
+            <div className="">
+              <span>{`Titel: ${title}`}</span>
               <br />
-            </span>
-            {`Betyg: ${rating}`}
+              <span>
+                {`Författare: ${author}`} <br />
+              </span>
+              <span>
+                {`Sidor: ${pages}`} <br />
+              </span>
+              <span>
+                Genre: {""}
+                {genreB.map((genAB) => {
+                  return <span>{` ${genAB.attributes.genre}`}</span>;
+                })}
+                <br />
+              </span>
+              {`Betyg: ${rating}`}<br/>
+            </div>
           </ul>
-        </div>
+        </div> 
       );
     });
   };
@@ -42,21 +48,22 @@ const AllBooks = ({ books, audioBooks }) => {
       let genreAB = genres.data;
       console.log("genreAB", genreAB);
       return (
-        <div key={index}>
+        <div key={index} className="booksName  child">
           <ul>
-            {`Titel: ${title}`} <br />
-            {`Utgivningsår: ${releaseDate}`}
-            <br />
-            {`Längd: ${lengthHour}h ${lengthMin}min`}
-            <br />
-            <span>
-              Genre: {""}
-              {genreAB.map((genAB) => {
-                return <span>{` ${genAB.attributes.genre}`}</span>;
-              })}
+            <div className="">
+              <span>{`Titel: ${title}`}</span> <br />
+              <span>{`Utgivningsår: ${releaseDate}`}</span> <br />
+              <span>{`Längd: ${lengthHour}h ${lengthMin}min`}</span>
               <br />
-            </span>
-            {`Betyg: ${rating}`}
+              <span>
+                Genre: {""}
+                {genreAB.map((genAB) => {
+                  return <span>{` ${genAB.attributes.genre}`}</span>;
+                })}
+                <br />
+              </span>
+              <span>{`Betyg: ${rating}`}</span>
+            </div>
           </ul>
         </div>
       );
@@ -75,27 +82,33 @@ const AllBooks = ({ books, audioBooks }) => {
 
   return (
     <>
-      <main className="main">
-        {/* BOOKS */}
-        <div>
-          <button
-            className="btn primary-btn highlighted-btn"
-            onClick={onClickShowBooks}
-          >
-            {showBooks ? "Dölj böcker" : "Visa Böcker"}
-          </button>
-          {showBooks && <div className="mapped">{mappedBooks()}</div>}
+      <main className="">
+        
+          {/* BOOKS */}
+          <div>
+            <button
+              className="btn primary-btn highlighted-btn"
+              onClick={onClickShowBooks}
+            >
+              {showBooks ? "Dölj böcker" : "Visa Böcker"}
+            </button>
+            <button
+              className="btn2 primary-btn2 highlighted-btn2"
+              onClick={onClickShowAudioBooks}
+            >
+              {showAudioBooks ? "Dölj ljudöcker" : "Visa ljudböcker"}
+            </button>
+            <div className=" ">
+            {showBooks && <div className="mapped  parent">{mappedBooks()}</div>}
+          </div>
         </div>
-
-        {/* AUDIOBOOKS */}
-        <div>
-          <button
-            className="btn2 primary-btn2 highlighted-btn2"
-            onClick={onClickShowAudioBooks}
-          >
-            {showAudioBooks ? "Dölj ljudöcker" : "Visa ljudböcker"}
-          </button>
-          {showAudioBooks ? <div>{mappedAudioBooks()}</div> : null}
+        
+          {/* AUDIOBOOKS */}
+          <div>
+            
+            <div className=" ">
+            {showAudioBooks && <div className="mapped parent">{mappedAudioBooks()}</div>}
+          </div>
         </div>
       </main>
     </>

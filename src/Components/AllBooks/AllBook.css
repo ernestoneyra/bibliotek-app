@@ -1,7 +1,26 @@
-.audiobooks {
+/* .audiobooks {
     max-width: 80%;
     flex-wrap: wrap-reverse;
 
+} */
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .child {
+    /* percent per item in row. 
+    33% = limit to 3 per row. */
+    flex: 1 0 20%; 
+    margin: 0 0 20px 0;
+   height: 140px;
+    
+  }
+
+.border {
+    border: 3px solid black;
 }
 
 ul {
@@ -76,4 +95,13 @@ ul {
     margin-left: 0;
 
 
+}
+
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    .child {
+        flex: 1 0 33%; 
+        margin: 0 0 20px 0;
+       height: 140px;
+    }
 }

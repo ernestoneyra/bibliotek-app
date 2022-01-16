@@ -4,13 +4,20 @@
 .main {
     display: flex;
   
-    margin: 0 20%;
+    /* justify-content: space-between; */
+    margin: 0 0 0 20%;
     padding-top: 10px;
  
 }
-.books {
-    margin-right: 100px;
+
+
+.space {
+    margin: 0 20% 0 0;
+    padding-top: 10px;
 }
+/* .books {
+    margin-right: 100px;
+} */
 
 .App-logo {
     height: 40vmin;
